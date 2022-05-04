@@ -2017,7 +2017,8 @@ pre code {
   color: #444;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #cbc8d0;
+  /*border: 1px solid #cbc8d0;*/
+  border: 1px solid #B5B3BA;
   border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -10152,6 +10153,3 @@ a.text-dark:hover, a.text-dark:focus {
   color: #5c507c;
 }
 
-.fontLight{
-    color: white !important;
-}
