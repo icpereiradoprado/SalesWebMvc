@@ -71,13 +71,30 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+/*My CSS Style*/
+
 .fontLight {
     color: white !important;
 }
 
-.field-form input{
+.field-form{
+    width: 400px;
+}
+
+.field-form input {
     width: 400px;
     margin-bottom: 12px;
+}
+
+.field-form input[type="submit"] {
+    display: block;
+    width: 100px;
+    margin: 0px auto;
+}
+
+.field-form select {
+    width: 400px;
+    margin-bottom: 20px;
 }
 
 .field-form label {

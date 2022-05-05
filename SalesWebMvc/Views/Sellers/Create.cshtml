@@ -1,36 +1,40 @@
-﻿@model SalesWebMvc.Models.Seller;
+﻿@model SalesWebMvc.Models.ViewModels.SellerFormViewModel;
 
 @{
     ViewData["Title"] = "Create";
 }
 
-
-<div class="container-fluid d-flex flex-column justify-content-center">
+<div class="container-fluid d-flex justify-content-center">
+<div>
     <h1 class="names-title">@ViewData["Title"] new Seller</h1>
 
     <form asp-action="Create">
 
         <div class="field-form">
-            <label asp-for="Name"> </label><br />
-            <input asp-for="Name" class="form-control" required placeholder="Enter your name..." />
+            <label asp-for="Seller.Name"> </label><br />
+            <input asp-for="Seller.Name" class="form-control" required placeholder="Enter your name..." />
         </div>
         <div class="field-form">
-            <label asp-for="Email"> </label><br />
-            <input asp-for="Email" type="email" class="form-control" required placeholder="Enter your Email..." />
+            <label asp-for="Seller.Email"> </label><br />
+            <input asp-for="Seller.Email" type="email" class="form-control" required placeholder="Enter your Email..." />
         </div>
         <div class="field-form">
-            <label asp-for="BirthDate"> </label><br />
-            <input asp-for="BirthDate" class="form-control" required />
+            <label asp-for="Seller.BirthDate"> </label><br />
+            <input asp-for="Seller.BirthDate" class="form-control" required />
         </div>
         <div class="field-form">
-            <label asp-for="BaseSalary"> </label><br />
-            <input asp-for="BaseSalary" type="number" class="form-control" min="0" required placeholder="Enter your Base Salary..." />
+            <label asp-for="Seller.BaseSalary"> </label><br />
+            <input asp-for="Seller.BaseSalary" type="number" class="form-control" min="0" required placeholder="Enter your Base Salary..." />
         </div>
-        <div>
+        <div class="field-form">
+            <label asp-for="Seller.DepartmentId" class=""></label>
+            <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments, "Id","Name"))" class="form-control"> </select>
+        </div>
+        <div class="field-form">
             <input type="submit" class="btn btn-primary" value="Create" />
         </div>
 
     </form>
 </div>
-
+</div>
 
