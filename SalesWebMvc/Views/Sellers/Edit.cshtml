@@ -1,15 +1,15 @@
 ﻿@model SalesWebMvc.Models.ViewModels.SellerFormViewModel;
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
 <div class="container-fluid d-flex justify-content-center">
 <div>
     <h1 class="names-title">@ViewData["Title"] new Seller</h1>
 
-    <form asp-action="Create">
-        <div asp-validation-summary="All" class="text-danger"></div>
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="Seller.Id" />
         <div class="field-form">
             <label asp-for="Seller.Name"> </label><br />
             <span asp-validation-for="Seller.Name" class="text-danger"></span>
@@ -18,8 +18,7 @@
         <div class="field-form">
             <label asp-for="Seller.Email"> </label><br />
             <span asp-validation-for="Seller.Email" class="text-danger"></span>
-            <input asp-for="Seller.Email" type="email" class="form-control" required placeholder="Enter your 
-Email..." />
+            <input asp-for="Seller.Email" type="email" class="form-control" required placeholder="Enter your Email..." />
         </div>
         <div class="field-form">
             <label asp-for="Seller.BirthDate"> </label><br />
@@ -36,7 +35,7 @@ Email..." />
             <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments, "Id","Name"))" class="form-control"> </select>
         </div>
         <div class="field-form">
-            <input type="submit" class="btn btn-primary" value="Create" />
+            <input type="submit" class="btn btn-primary" value="Save" />
         </div>
 
     </form>
